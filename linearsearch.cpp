@@ -24,8 +24,9 @@ int main(){
         cout<< "key is present"<< endl;
 
     }
-    else;
-    cout<<"key is not present"<<endl;
+    else{
+        cout<<"key is not present"<<endl;
+    }
 
     return 0;
     

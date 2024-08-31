@@ -24,7 +24,7 @@ int main(){
     cout << " before " << n << endl;
     update2(n);
     cout << " after " << n <<endl;
-    
+    int n = 5;
 
     return 0;
 }

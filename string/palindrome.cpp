@@ -31,7 +31,7 @@ bool cheakpalindrome( char a[] , int n){
 
 int getLength( char name[]){
     int count = 0;
-    for (int i= 0; name[i] != '\0'; i++){
+    for (int i= 0; name[i] != '0'; i++){
         count++ ;
     }
     return count;

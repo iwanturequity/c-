@@ -42,6 +42,7 @@ void sayDigit(int n , string arr[]){
 
     sayDigit( n , arr);
     cout << arr[digit] << " " ;
+    // yaha base case hit hone ke bad print ho rha ulta aur de rha
 }
 
 int main(){

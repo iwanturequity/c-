@@ -44,9 +44,9 @@ void quickSort(int arr[] , int s  , int e){
 
 int main() {
 
-    int arr[5] { 8, 6,4,9,2};
+    int arr[10] { 8, 6,4,9,2 , 1 , 2 , 3 , 4 , 5};
 
-    int n = 5;
+    int n = 10;
 
     quickSort(arr , 0 , n-1);
 

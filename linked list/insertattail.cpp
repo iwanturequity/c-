@@ -13,10 +13,14 @@ class node{
     }
 };
 
+void insertatPostition( int position , int data){
+
+}
+
 void insertatTail( node* &tail , int data){
     node* temp = new node(data);
     tail -> next = temp;
-    temp = tail -> next;
+    tail = tail -> next;
 }
 
 void print( node* &head){
@@ -35,7 +39,7 @@ int main(){
     node* tail = node1 ;
     print(head);
 
-    insertatTail(head , 12);
+    insertatTail(tail , 12);
     print(head);
 
     return 0;

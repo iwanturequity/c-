@@ -21,9 +21,22 @@ class hero {
 
     // parameterized constuctor 
 
-    hero(int health){
+    hero(int health , char level){
         cout << " health is " << this << endl;
         this -> health = health;
+        this -> level = level;
+    }
+    // copy constructor
+
+    hero( hero& temp){
+        cout << " copy constuctor called " << endl;
+        this -> health = temp.health;
+        this -> level = temp.level;
+    }
+
+    void print(){
+        cout << " health " << this -> health << endl;
+        cout << " level " << this -> level << endl;
     }
 
 
@@ -35,25 +48,48 @@ class hero {
         health = h;
     }
 
+    char getlevel(){
+        return level;
+    }
+
+    void setlevel( char ch){
+        level = ch;
+    }
+
 };
 int main(){
 
+    hero suresh( 70, 'a');
+    // now copy one object to another object 
+
+    
+    hero R(suresh);
+
+    //ye niche wale ka short 
+    // r.health = suresh.health;
+    // r.level = suresh.level;
+
+
+    R.print();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //staticallt created object
-    hero ramesh(70);
-    cout << " address of ramesh " << &ramesh << endl;
-    ramesh.gethealth();
-
-
-
-
-
-
-
-
-
-
-
-
+    // hero ramesh(70);
+    // cout << " address of ramesh " << &ramesh << endl;
+    // ramesh.gethealth();
 
 
     /*

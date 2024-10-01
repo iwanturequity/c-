@@ -11,6 +11,9 @@ class node{
         this -> data = data;
         this -> next = NULL;
     }
+
+
+    // destructor
 };
 
 void insertAtHead( node* &head , int d){

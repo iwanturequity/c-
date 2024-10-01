@@ -26,6 +26,7 @@ class hero {
         this -> health = health;
         this -> level = level;
     }
+    
     // copy constructor
 
     hero( hero& temp){
@@ -56,34 +57,44 @@ class hero {
         level = ch;
     }
 
+    // Destructor
+    ~hero(){
+        cout << " destructor called " << endl;
+    }
+
 };
 int main(){
 
-    hero suresh( 70, 'a');
-    // now copy one object to another object 
+    // statically
+    hero a;
+
+    // dynamically 
+    hero *b = new hero();
+    delete b;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+/*  
+    // hero suresh( 70, 'a');
+    // // now copy one object to another object 
 
     
-    hero R(suresh);
+    // hero R(suresh);
 
-    //ye niche wale ka short 
-    // r.health = suresh.health;
-    // r.level = suresh.level;
-
-
-    R.print();
+    // //ye niche wale ka short 
+    // // r.health = suresh.health;
+    // // r.level = suresh.level;
 
 
-
-
-
-
-
-
-
-
-
-
-
+    // R.print();
 
 
     //staticallt created object
@@ -121,7 +132,8 @@ int main(){
     // cout << " health is : " << ramesh.health << endl;
     // cout << " health is : " << ramesh.level << endl;
 
-    */
+    
 
     return 0;
 }
+*/

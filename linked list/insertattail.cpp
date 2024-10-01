@@ -11,6 +11,18 @@ class node{
        this -> data = data;
        this -> next = NULL; 
     }
+
+    // destructor for delation 
+    ~node(){
+        int value = this -> data;
+        //memory free
+        if(this->next != NULL) {
+            delete next;
+            this->next = NULL;
+        }
+        cout << " memory is free for node with data " << value << endl;
+    }
+
 };
 
 // --------------- insertion at head -------------------;
@@ -57,7 +69,7 @@ void insertatTail( node* &tail , int data){
 // --------------- delation from linklist -------------------;
 
 void deleteNode( int position , node* &head){
-    // deleting starting nide 
+    // deleting starting node 
     if( position == 1){
         node* temp = head;
         head = head -> next;
@@ -66,6 +78,14 @@ void deleteNode( int position , node* &head){
     }
     else{
         // middle and last node delation 
+        node* curr = head;
+        node* prev = NULL;
+        int cnt = 1;
+        while( cnt <= position){
+            prev = curr;
+            curr = curr -> next;
+            cnt++;
+        }
 
     }
 }

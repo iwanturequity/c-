@@ -32,6 +32,14 @@ class node{
     head = temp;
   }
 
+
+// --------------- insertion at tail -------------------;
+void insertatTail( node* &tail , int data){
+    node* temp = new node(data);
+    tail -> next = temp;
+    tail = temp;
+}
+
 // --------------- insertion at any position -------------------;
 void insertatPostition(node* &tail ,  node* &head , int position , int data){
 
@@ -58,13 +66,6 @@ void insertatPostition(node* &tail ,  node* &head , int position , int data){
     temp -> next  = nodeInsert; 
 }
 
-// --------------- insertion at tail -------------------;
-void insertatTail( node* &tail , int data){
-    node* temp = new node(data);
-    tail -> next = temp;
-    tail = tail -> next;
-}
-
 
 // --------------- delation from linklist -------------------;
 
@@ -73,6 +74,7 @@ void deleteNode( int position , node* &head){
     if( position == 1){
         node* temp = head;
         head = head -> next;
+        temp -> next = NULL;
     // memory free of stating node 
         delete temp;
     }
@@ -81,12 +83,14 @@ void deleteNode( int position , node* &head){
         node* curr = head;
         node* prev = NULL;
         int cnt = 1;
-        while( cnt <= position){
+        while( cnt < position){
             prev = curr;
             curr = curr -> next;
             cnt++;
         }
-
+        prev -> next = curr -> next ;
+        curr -> next = NULL;  // breaking link with deleted node
+        delete curr;  // memory free of deleted node
     }
 }
 
@@ -113,6 +117,9 @@ int main(){
     print(head);
 
     insertatPostition( tail ,head , 3 , 25);
+    print(head);
+
+    deleteNode(1 , head);
     print(head);
 
     return 0;

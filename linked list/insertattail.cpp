@@ -55,7 +55,7 @@ void insertatPostition(node* &tail ,  node* &head , int position , int data){
     }
 
     // if position is greater than length of linked list then insert at tail
-    if( temp -> next = NULL){
+    if( temp -> next == NULL){
         insertatTail(tail , data);
         return;
     }

@@ -13,6 +13,17 @@ class node{
         this -> prev = NULL;
         this -> next = NULL;
     } 
+
+    // destructor for deletion
+    ~node(){
+    int value = this -> data;
+    // memory free
+    if( next != NULL){
+        delete next ;
+        next = NULL;
+    }
+    cout << " memory free " << value << endl;
+    } 
 };
 
 // traverse the link list 
@@ -91,6 +102,31 @@ void insertatPosition(node* &head , node* &tail , int position , int data){
     temp -> next -> prev = nodeInsert;
     temp -> next  = nodeInsert; 
     nodeInsert -> prev = temp;
+}
+
+void deleteNode( int position , node* &head){
+    // deleting starting node 
+    if( position == 1){
+        node* temp = head;
+        temp -> next -> prev = NULL;
+        head = temp -> next;
+        temp -> next = NULL;
+        delete temp;
+    }
+    else{
+        // middle and last node delation 
+        node* curr = head;
+        node* prev = NULL;
+        int cnt = 1;
+        while( cnt < position){
+            prev = curr;
+            curr = curr -> next;
+            cnt++;
+        }
+        prev -> next = curr -> next ;
+        curr -> next = NULL;  // breaking link with deleted node
+        delete curr;  // memory free of deleted node
+    }
 }
 
 int main(){

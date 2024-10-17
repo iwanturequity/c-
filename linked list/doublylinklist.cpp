@@ -123,8 +123,9 @@ void deleteNode( int position , node* &head){
             curr = curr -> next;
             cnt++;
         }
+        curr -> prev = NULL;
         prev -> next = curr -> next ;
-        curr -> next = NULL;  // breaking link with deleted node
+        curr -> next  = NULL;
         delete curr;  // memory free of deleted node
     }
 }

@@ -1,7 +1,10 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "exception": "cpp"
+        "exception": "cpp",
+        "vector": "cpp"
     },
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "workbench.editor.centeredLayoutFixedWidth": false,
+    "prettier.printWidth": 80
 }

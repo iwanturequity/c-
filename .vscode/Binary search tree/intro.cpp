@@ -41,6 +41,7 @@ Node* buildtree(Node* root ){
 void levelOrdertraverse(Node* root){
     queue<Node*>q;
     q.push(root);
+    q.push(NULL);
 
     while( !q.empty()){
         Node* temp = q.front();
@@ -65,6 +66,7 @@ int main(){
 
     // levelorder traversal of the tree
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
+    cout << "Level order traversal of the tree is : " << endl;  
     levelOrdertraverse(root);
     return 0;
 }

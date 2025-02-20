@@ -2,7 +2,6 @@
 #include<queue>
 using namespace std;
 
-
 class Node{
     // Node class with data, left and right pointers
     public:
@@ -34,10 +33,11 @@ Node* buildtree(Node* root ){
     root->left = buildtree(root -> left);
     cout << " enter the right child of " << data << endl;
     root -> right = buildtree(root -> right);
+
+    return root;
 }
 
 // levelorder traversal of the tree
-
 void levelOrdertraverse(Node* root){
     queue<Node*>q;
     q.push(root);
@@ -45,16 +45,26 @@ void levelOrdertraverse(Node* root){
 
     while( !q.empty()){
         Node* temp = q.front();
-        cout << temp -> data << " " ;
+        // yaha answer print hone ja rha hai esliye esko bahr nikala ja rha hai
         q.pop();
 
-        if(temp -> left){
-            q.push(temp -> left);
+        if(temp == NULL){
+            cout << endl;
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }
+        else{
+            cout << temp -> data << " " ;
+            if(temp -> left){
+                q.push(temp -> left);
+            }
+    
+            if(temp -> right){
+                q.push(temp -> right);
+            }
         }
 
-        if(temp -> right){
-            q.push(temp -> right);
-        }
     }
 };
 

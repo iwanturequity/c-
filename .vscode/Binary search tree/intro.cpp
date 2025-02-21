@@ -107,8 +107,9 @@ void postorder(Node* root){
 
 // build treee using level order traversal
 
-Node* buildfromLevelOrder( Node* root){
+void buildfromLevelOrder( Node* &root){
     queue<Node*>q;
+    cout << "Enter root  for data " << endl;
     int data ;
     cin>> data;
     root = new Node(data);
@@ -118,15 +119,31 @@ Node* buildfromLevelOrder( Node* root){
         Node* temp = q.front();
         q.pop();
 
-        cout << " enter  the left data of tree" << endl;
-        
+        cout << " enter  the left data of tree" << temp-> data << endl;
+        int leftData;
+        cin>> leftData ;
+        if(leftData != -1){
+            temp->left = new Node(leftData);
+            q.push(temp -> left);
+        }
+
+        cout << " enter  the right data of tree" << temp -> data << endl;
+        int rightData;
+        cin>> rightData ;
+        if(rightData!= -1){
+            temp->right = new Node(rightData);
+            q.push(temp -> right);
+        }
     }
-}
+};
 
 int main(){
 
     Node* root = NULL;
 
+    buildfromLevelOrder(root);
+    levelOrdertraverse(root);
+    /*
     root = buildtree(root);
 
     // levelorder traversal of the tree
@@ -142,6 +159,9 @@ int main(){
 
     cout << endl <<  " Postorder traversal is " ;
     postorder(root);
+    */
+
+    buildfromLevelOrder(root);
 
     return 0;
 }

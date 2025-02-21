@@ -68,6 +68,61 @@ void levelOrdertraverse(Node* root){
     }
 };
 
+// inorder
+void inorder(Node* root){
+    if(root == NULL){
+        return ;
+    }
+
+    inorder(root -> left);
+    cout << root -> data << " ";
+    inorder(root -> right);
+    // inorder traversal is left -> root -> right
+}
+
+// preorder
+void preorder(Node* root){
+    if(root == NULL){
+        return ;
+    }
+
+    cout << root -> data << " ";
+    preorder(root -> left);
+    preorder(root -> right);
+    // inorder traversal is left -> root -> right
+}
+
+// postorder 
+void postorder(Node* root){
+    if(root == NULL){
+        return ;
+    }
+
+    
+    postorder(root -> left);
+    postorder(root -> right);
+    cout << root -> data << " ";
+    // inorder traversal is left -> root -> right
+}
+
+// build treee using level order traversal
+
+Node* buildfromLevelOrder( Node* root){
+    queue<Node*>q;
+    int data ;
+    cin>> data;
+    root = new Node(data);
+    q.push(root);
+
+    while(!q.empty()){
+        Node* temp = q.front();
+        q.pop();
+
+        cout << " enter  the left data of tree" << endl;
+        
+    }
+}
+
 int main(){
 
     Node* root = NULL;
@@ -78,5 +133,15 @@ int main(){
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     cout << "Level order traversal of the tree is : " << endl;  
     levelOrdertraverse(root);
+
+    cout << endl << " Inoredr traversal is " ;
+    inorder(root);
+
+    cout << endl << " Preorder traversal is " ;
+    preorder(root);
+
+    cout << endl <<  " Postorder traversal is " ;
+    postorder(root);
+
     return 0;
 }

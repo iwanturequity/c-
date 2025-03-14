@@ -115,6 +115,46 @@ Node* maxValue(Node* root){
     }
     return temp;
 }
+
+// deletion from BST
+
+Node* deleteNode(Node* root , int val){
+    if(root == NULL){
+        return root;
+    }
+    if(root -> data == val){
+        // for 0
+        if(root->left== NULL && root ->right == NULL){
+            delete root ;
+            return NULL;
+        }
+        // for 1 child 
+        if(root->left != NULL && root-> right == NULL){
+            Node* temp = root -> left;
+            delete root;
+            return temp;
+        }
+        if(root->left == NULL && root->right != NULL){
+            Node* temp = root -> right ;
+            delete root;
+            return temp;
+        }
+
+        // for 2 child 
+        if(root ->left != NULL && root ->right != NULL){
+            int mini = minValue(root->right)->data;
+            root ->data = mini;
+            root -> right = deleteNode(root->right , mini);
+            return root;
+        }
+    }
+    else if(root->data > val){
+        root ->left = deleteNode(root ->left , val);
+    }
+    else{
+        root->right = deleteNode(root ->right , val);
+    }
+}
 void takeInput(Node* &root){
     int data;
     cin >> data;

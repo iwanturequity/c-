@@ -111,12 +111,7 @@ int main(){
 
     int arr[6] = {-1, 54, 55 , 53 , 52, 50};
     int n =5;
-
-<<<<<<< HEAD
-    // heap creation 0 based index 
-=======
-    // heap creation 
->>>>>>> 626adbbb691121e87c1f99c08fb0be2472a49074
+    // heapify the array
     for(int i=n/2; i>0; i--) {
         heapify(arr , n , i);
     }
